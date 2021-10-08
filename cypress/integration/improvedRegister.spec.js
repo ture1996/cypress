@@ -30,5 +30,6 @@ describe('improved register',() => {
         cy.get(locators.registerPage.passwordConfirmationField).type(userData.randomPassword);
         cy.get(locators.registerPage.termsCheckbox).check();
         cy.get(locators.registerPage.submitButton).click();
+        cy.get(locators.Header.logoutButton).should('be.visible');
     })
 })
