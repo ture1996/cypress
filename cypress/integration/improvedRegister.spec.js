@@ -5,7 +5,8 @@ const faker = require('faker');
 
 describe('improved register',() => {
     let userData = {
-        randomName: faker.name.findName(),
+        randomName: faker.name.firstName(),
+        randomSurname: faker.name.lastName(),
         randomEmail: faker.internet.email(),
         randomPassword: faker.random.number()*10000000
     }
@@ -23,7 +24,7 @@ describe('improved register',() => {
         cy.get(locators.Header.registerButton).click();
         cy.url().should('contains', 'https://gallery-app.vivifyideas.com/register');
         cy.get(locators.registerPage.firstNameField).type(userData.randomName);
-        cy.get(locators.registerPage.lastNameField).type(userData.randomName);
+        cy.get(locators.registerPage.lastNameField).type(userData.randomSurname);
         cy.get(locators.registerPage.emailField).type(userData.randomEmail);
         cy.get(locators.registerPage.passwordField).type(userData.randomPassword);
         cy.get(locators.registerPage.passwordConfirmationField).type(userData.randomPassword);
