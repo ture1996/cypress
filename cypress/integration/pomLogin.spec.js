@@ -29,5 +29,8 @@ describe('improved login', () => {
     });
     it('login with invalid data', () => {
         loginPage.login(userData.randomEmail, userData.randomPassword);
+        loginPage.errorMessage.should('be.visible');
+        loginPage.errorMessage.should('have.css', 'background-color', 'rgb(248, 215, 218)');
+        loginPage.errorMessage.should('have.text', 'Bad Credentials');
     });
 });
