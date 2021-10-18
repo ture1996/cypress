@@ -1,5 +1,5 @@
 {
-    "baseUrl" : "https://gallery-app.vivifyideas.com/",
+    "baseUrl" : "https://cypress.vivifyscrum-stage.com/",
     "env": {
         "validPassword":"11111111",
         "validEmail": "y@y.y"
